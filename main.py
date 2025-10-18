@@ -47,7 +47,7 @@ def main():
         with open(dictionaries_path, 'r', encoding='utf-8') as f:
             dictionaries = json.load(f)
         acronyms = dictionaries.get("acronyms", {})
-        standardization_map = dictionaries.get("standardization_map", {})
+        dictionaries_path = input_dir / 'dicionarios.json'
         print("Dicionários de normalização carregados com sucesso.")
     except FileNotFoundError:
         print(f"Aviso: Arquivo '{dictionaries_path}' não encontrado. A normalização será limitada.")
