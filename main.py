@@ -43,13 +43,16 @@ def main():
     output_filename = f"{base_name}_output.jsonl"
     output_path = Path('data/output') / output_filename
 
-    acronyms = {
-        "IFNMG": "Instituto Federal do Norte de Minas Gerais",
-        "PPC": "Projeto Pedagógico de Curso",
-        "BCC": "Bacharelado em Ciência da Computação",
-        "APL": "Arranjos Produtivos Locais",
-        "SBC": "Sociedade Brasileira de Computação"
-    }
+    try:
+        with open(dictionaries_path, 'r', encoding='utf-8') as f:
+            dictionaries = json.load(f)
+        acronyms = dictionaries.get("acronyms", {})
+        standardization_map = dictionaries.get("standardization_map", {})
+        print("Dicionários de normalização carregados com sucesso.")
+    except FileNotFoundError:
+        print(f"Aviso: Arquivo '{dictionaries_path}' não encontrado. A normalização será limitada.")
+        acronyms = {}
+        standardization_map = {}
 
 
     print("1. Extraindo texto bruto...")
