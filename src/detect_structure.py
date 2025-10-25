@@ -84,7 +84,7 @@ def detect_structure(pdf_path: str, normalized_text: str) -> dict:
             current_article = None
             continue
 
-        match_artigo = re.match(r"^(art\.?\s*\d+)(.*)", line, re.IGNORECASE)
+        match_artigo = re.match(r"^(art\.?\s*\d+º?)(.*)", line, re.IGNORECASE)
         if match_artigo:
             artigo_titulo = match_artigo.group(1).capitalize()
             artigo_texto_inicial = match_artigo.group(2).strip()
