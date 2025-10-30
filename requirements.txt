@@ -11,3 +11,8 @@ langchain-community
 langchain-openai
 datasets
 ragas
+scikit-learn
+numpy
+pandas
+tqdm
+click
