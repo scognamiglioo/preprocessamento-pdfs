@@ -1,1 +1,13 @@
-PyPDF2
+pdfminer.six
+pdfplumber
+unidecode
+camelot-py[cv]
+thefuzz[fuzz]
+pypdf
+langchain
+sentence-transformers
+torch
+langchain-community
+langchain-openai
+datasets
+ragas
